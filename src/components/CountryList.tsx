@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Country } from '../types';
 import CountryCard from './CountryCard';
 
@@ -28,6 +29,27 @@ const CountryList: React.FC<CountryListProps> = React.memo(
     );
   }
 );
+
+CountryList.propTypes = {
+  countries: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.shape({
+        common: PropTypes.string.isRequired,
+        official: PropTypes.string.isRequired,
+      }).isRequired,
+      population: PropTypes.number.isRequired,
+      region: PropTypes.string.isRequired,
+      flags: PropTypes.shape({
+        png: PropTypes.string.isRequired,
+        svg: PropTypes.string.isRequired,
+        alt: PropTypes.string,
+      }).isRequired,
+      cca3: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  visitedCountries: PropTypes.instanceOf(Set).isRequired,
+  onToggleVisited: PropTypes.func.isRequired,
+};
 
 CountryList.displayName = 'CountryList';
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { SortOption, SortField, SortDirection } from '../types';
 
 interface FilterControlsProps {
@@ -87,6 +88,19 @@ const FilterControls: React.FC<FilterControlsProps> = React.memo(
     );
   }
 );
+
+FilterControls.propTypes = {
+  regions: PropTypes.arrayOf(PropTypes.string).isRequired,
+  selectedRegion: PropTypes.string.isRequired,
+  searchTerm: PropTypes.string.isRequired,
+  sortOption: PropTypes.shape({
+    field: PropTypes.oneOf(['name', 'population']).isRequired,
+    direction: PropTypes.oneOf(['asc', 'desc']).isRequired,
+  }).isRequired,
+  onRegionChange: PropTypes.func.isRequired,
+  onSearchChange: PropTypes.func.isRequired,
+  onSortChange: PropTypes.func.isRequired,
+};
 
 FilterControls.displayName = 'FilterControls';
 
