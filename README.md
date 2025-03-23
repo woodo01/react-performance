@@ -32,11 +32,53 @@ The application is optimized for performance using React's memoization features:
 
 ### Initial Performance (Before Optimization)
 
-[Insert screenshots and descriptions of initial performance measurements here]
+To capture the initial performance, you'll need to temporarily remove the performance optimizations:
+1. Remove React.memo() wrapping from all components
+2. Remove useMemo() calls throughout the app
+3. Remove useCallback() for event handlers
+
+Then use the React DevTools Profiler to record interactions such as:
+- Sorting countries by name or population
+- Filtering countries by region
+- Searching for a specific country
+
+Record the following metrics:
+- **Commit Duration:** [Insert measurement] ms
+- **Render Duration:** [Insert measurement] ms
+- **Flame Graph:**
+
+![Initial Flame Graph](./screenshots/initial-flame-graph.png)
+
+- **Ranked Chart:**
+
+![Initial Ranked Chart](./screenshots/initial-ranked-chart.png)
+
+- **Interactions Causing Renders:**
+  - [List interactions and components that re-rendered unnecessarily]
 
 ### Optimized Performance (After Applying Memoization)
 
-[Insert screenshots and descriptions of optimized performance measurements here]
+After re-implementing all the optimizations (React.memo, useMemo, useCallback), record the same interactions and compare:
+
+- **Commit Duration:** [Insert measurement] ms (Improvement: X%)
+- **Render Duration:** [Insert measurement] ms (Improvement: X%)
+- **Flame Graph:**
+
+![Optimized Flame Graph](./screenshots/optimized-flame-graph.png)
+
+- **Ranked Chart:**
+
+![Optimized Ranked Chart](./screenshots/optimized-ranked-chart.png)
+
+- **Interactions Causing Renders:**
+  - [List interactions and components that now avoid unnecessary re-renders]
+
+### Key Performance Improvements
+
+- [Describe how useMemo helped avoid expensive recalculations]
+- [Describe how React.memo prevented unnecessary re-renders]
+- [Describe how useCallback stabilized event handler references]
+- [Note any specific components that benefited most from the optimizations]
 
 ## Setup and Running the Project
 
@@ -53,6 +95,18 @@ The application is optimized for performance using React's memoization features:
    ```
    npm run build
    ```
+
+## Profiling Process
+
+To profile the application performance:
+
+1. Install React Developer Tools browser extension
+2. Run the app in development mode
+3. Open browser developer tools and navigate to the "Profiler" tab in React DevTools
+4. Click the record button (circle)
+5. Perform interactions (sorting, filtering, etc.)
+6. Stop recording
+7. Analyze the results in Flame Graph and Ranked Chart views
 
 ## Code Structure
 
