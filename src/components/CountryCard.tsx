@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Country } from '../types';
 
 interface CountryCardProps {
@@ -44,6 +45,25 @@ const CountryCard: React.FC<CountryCardProps> = React.memo(
     );
   }
 );
+
+CountryCard.propTypes = {
+  country: PropTypes.shape({
+    name: PropTypes.shape({
+      common: PropTypes.string.isRequired,
+      official: PropTypes.string.isRequired,
+    }).isRequired,
+    population: PropTypes.number.isRequired,
+    region: PropTypes.string.isRequired,
+    flags: PropTypes.shape({
+      png: PropTypes.string.isRequired,
+      svg: PropTypes.string.isRequired,
+      alt: PropTypes.string,
+    }).isRequired,
+    cca3: PropTypes.string.isRequired,
+  }).isRequired,
+  isVisited: PropTypes.bool.isRequired,
+  onToggleVisited: PropTypes.func.isRequired,
+};
 
 CountryCard.displayName = 'CountryCard';
 
