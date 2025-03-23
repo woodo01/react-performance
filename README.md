@@ -38,12 +38,12 @@ The non-optimized version of the application showed significant performance issu
 - **Render Duration:** 15.5 ms
 - **Flame Graph:**
 
-![Initial Flame Graph](./screenshots/Screenshot\ 2025-03-23\ at\ 22.18.56.png)
-![Initial Flame Graph](./screenshots/Screenshot\ 2025-03-23\ at\ 22.19.57.png)
+![Initial Flame Graph](<https://github.com/woodo01/react-performance/blob/performance/screenshots/non-optimized/Screenshot 2025-03-23 at 22.18.56.png>)
+![Initial Flame Graph](<https://github.com/woodo01/react-performance/blob/performance/screenshots/non-optimized/Screenshot 2025-03-23 at 22.19.57.png>)
 
 - **Ranked Chart:**
 
-![Initial Ranked Chart](./screenshots/Screenshot\ 2025-03-23\ at\ 22.19.13.png)
+![Initial Ranked Chart](<https://github.com/woodo01/react-performance/blob/performance/screenshots/non-optimized/Screenshot 2025-03-23 at 22.19.13.png>)
 
 - **Interactions Causing Renders:**
   - Changing sort criteria caused all CountryCard components to re-render despite their props not changing
@@ -59,12 +59,12 @@ After implementing the performance optimizations, the application shows dramatic
 - **Render Duration:** 1.7 ms (Improvement: 912%)
 - **Flame Graph:**
 
-![Optimized Flame Graph](./screenshots/Screenshot\ 2025-03-23\ at\ 22.21.59.png)
-![Optimized Flame Graph](./screenshots/Screenshot\ 2025-03-23\ at\ 22.22.26.png)
+![Optimized Flame Graph](<https://github.com/woodo01/react-performance/blob/performance/screenshots/optimized/Screenshot 2025-03-23 at 22.21.59.png>)
+![Optimized Flame Graph](<https://github.com/woodo01/react-performance/blob/performance/screenshots/optimized/Screenshot 2025-03-23 at 22.22.26.png>)
 
 - **Ranked Chart:**
 
-![Optimized Ranked Chart](./screenshots/Screenshot\ 2025-03-23\ at\ 22.22.08.png)
+![Optimized Ranked Chart](<https://github.com/woodo01/react-performance/blob/performance/screenshots/optimized/Screenshot 2025-03-23 at 22.22.08.png>)
 
 - **Interactions Causing Renders:**
   - Sort operations now only update the necessary components
