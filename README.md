@@ -43,15 +43,16 @@ Then use the React DevTools Profiler to record interactions such as:
 - Searching for a specific country
 
 Record the following metrics:
-- **Commit Duration:** [Insert measurement] ms
-- **Render Duration:** [Insert measurement] ms
+- **Commit Duration:** 3.01 ms
+- **Render Duration:** 15.5 ms
 - **Flame Graph:**
 
-![Initial Flame Graph](./screenshots/initial-flame-graph.png)
+![Initial Flame Graph](./screenshots/Screenshot\ 2025-03-23\ at\ 22.18.56.png)
+![Initial Flame Graph](./screenshots/Screenshot\ 2025-03-23\ at\ 22.19.57.png)
 
 - **Ranked Chart:**
 
-![Initial Ranked Chart](./screenshots/initial-ranked-chart.png)
+![Initial Ranked Chart](./screenshots/Screenshot\ 2025-03-23\ at\ 22.19.13.png)
 
 - **Interactions Causing Renders:**
   - [List interactions and components that re-rendered unnecessarily]
@@ -60,15 +61,16 @@ Record the following metrics:
 
 After re-implementing all the optimizations (React.memo, useMemo, useCallback), record the same interactions and compare:
 
-- **Commit Duration:** [Insert measurement] ms (Improvement: X%)
-- **Render Duration:** [Insert measurement] ms (Improvement: X%)
+- **Commit Duration:** 2.4 ms (Improvement: 125%)
+- **Render Duration:** 1.7 ms (Improvement: 912%)
 - **Flame Graph:**
 
-![Optimized Flame Graph](./screenshots/optimized-flame-graph.png)
+![Optimized Flame Graph](./screenshots/Screenshot\ 2025-03-23\ at\ 22.21.59.png)
+![Optimized Flame Graph](./screenshots/Screenshot\ 2025-03-23\ at\ 22.22.26.png)
 
 - **Ranked Chart:**
 
-![Optimized Ranked Chart](./screenshots/optimized-ranked-chart.png)
+![Optimized Ranked Chart](./screenshots/Screenshot\ 2025-03-23\ at\ 22.22.08.png)
 
 - **Interactions Causing Renders:**
   - [List interactions and components that now avoid unnecessary re-renders]
